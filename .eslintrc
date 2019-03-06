@@ -18,6 +18,7 @@
     "strict": 0,
     "comma-dangle": "off",
     "import/no-extraneous-dependencies": "off",
+    "import/no-unresolved": [2, { "ignore": ["chayns-components"] }],
     "react/jsx-tag-spacing": "off",
     "react/jsx-indent": "off",
     "react/jsx-indent-props": "off",
