@@ -7,8 +7,7 @@
     "start": "webpack-dev-server --hot --config ./webpack/dev.babel.js --mode development --https",
     "start:http": "webpack-dev-server --config ./webpack/dev.babel.js --mode development",
     "build": "webpack -p --config ./webpack/prod.babel.js --mode production",
-    "build:staging": "webpack -p --config ./webpack/staging.babel.js --mode development",
-    "postinstall": "node postinstall.js"
+    "build:staging": "webpack -p --config ./webpack/staging.babel.js --mode development"
   },
   "author": "Tobit.Software",
   "license": "ISC",

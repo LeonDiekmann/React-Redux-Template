@@ -5,7 +5,7 @@
  *
  * We add autoprefixer as an plugin for the postcss-loader.
  *
- * autoprefixer? wait!whaat?? Check this repository for details -> [https://github.com/postcss/autoprefixer]
+ * Check this repository for details -> [https://github.com/postcss/autoprefixer]
  */
 
 module.exports = {

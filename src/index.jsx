@@ -6,7 +6,6 @@ import { createLogger } from 'redux-logger';
 import { Provider } from 'react-redux';
 import { applyMiddleware, createStore } from 'redux';
 import rootReducer from './reducers/root';
-import { getTodos } from './actions/todos';
 import App from './components/App';
 
 const reduxLogger = createLogger({
@@ -21,22 +20,18 @@ if (__DEV__ || __STAGING__) {
     middlewares.push(reduxLogger);
 }
 
-// We create our redux store
 const store = createStore(
     rootReducer,
     applyMiddleware(...middlewares)
 );
 
-// We enable immutable dev tools for a better console experience
 if (__DEV__ || __STAGING__) {
     const installDevTools = require('immutable-devtools');
     installDevTools(immutable);
 }
 
-// We get the root element
 const rootEl = document.getElementById('app');
 
-// We render the given component into the root element
 const render = (Component) => {
     ReactDOM.render(
         <Provider store={store}>
@@ -52,16 +47,11 @@ const render = (Component) => {
  */
 async function init() {
     try {
-        // We wait until chayns® is ready
         await chayns.ready;
 
-        // We dispatch getTodos to get the todos into our redux state
-        store.dispatch(getTodos());
-
-        // We render the App
         render(App);
     } catch (err) {
-        console.warn('no chayns environment found', err);
+        console.error('no chayns environment found', err);
     }
 }
 
